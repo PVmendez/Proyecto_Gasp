@@ -5,13 +5,17 @@
 //-------------------------------------------------------------------------
 
 using System;
-using System.Collections;
+//cambio
+using System.Text;
+using System.Collections.Generic;
+using System.Linq;
+//cambio
 
-namespace Full_GRASP_And_SOLID.Library
+namespace Proyecto_Gasp.Library
 {
     public class Recipe
     {
-        private ArrayList steps = new ArrayList();
+        private List<Step> steps = new List<Step>();
 
         public Product FinalProduct { get; set; }
 
@@ -25,14 +29,28 @@ namespace Full_GRASP_And_SOLID.Library
             this.steps.Remove(step);
         }
 
-        public void PrintRecipe()
+        public string PrintRecipe(bool verbose = false)
         {
-            Console.WriteLine($"Receta de {this.FinalProduct.Description}:");
+            //cambio
+            StringBuilder sb = new StringBuilder();
+
             foreach (Step step in this.steps)
             {
-                Console.WriteLine($"{step.Quantity} de '{step.Input.Description}' " +
-                    $"usando '{step.Equipment.Description}' durante {step.Time}");
+                Console.WriteLine($"{step.Quantity} de {step.Input.Description} " + $"usando {step.Equipment.Description} durante {step.Time} segundos");
             }
+            sb.Append("\n");
+            sb.Append($"Costo total: ${this.TotalCost()}");
+            return sb.ToString();
+
         }
+
+            public double TotalCost() {
+
+                double ts;
+                ts = this.steps.Select(step => step.TotalCost).Sum();
+                return ts;
+
+            }
+            //cambio
     }
 }

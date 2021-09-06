@@ -22,4 +22,6 @@ Costo total = costo insumos + costo equipamiento
 Escriban la respuesta en comentarios en el código.
 
 
+
+
 ➡️ **Agregar al final de la impresión de la receta el costo total de producción que se obtiene usando el método recién agregado.**

@@ -73,3 +73,5 @@ namespace Proyecto_Gasp.Library
         }
     }
 }
+
+//Por el patrón Expert podemos definir que clase es responsable de la informacion para determinar el costo total de produccion.

@@ -4,7 +4,7 @@
 // </copyright>
 //-------------------------------------------------------------------------------
 
-namespace Full_GRASP_And_SOLID.Library
+namespace Proyecto_Gasp.Library
 {
     public class Equipment
     {
@@ -17,5 +17,15 @@ namespace Full_GRASP_And_SOLID.Library
         public string Description { get; set; }
 
         public double HourlyCost { get; set; }
+
+        //cambio
+        public double TotalCost(int minutes) {
+
+            double th;
+            th = this.HourlyCost * minutes / 60;
+            return th;
+
+        } 
+        //cambio
     }
 }

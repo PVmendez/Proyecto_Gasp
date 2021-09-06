@@ -4,7 +4,7 @@
 // </copyright>
 //---------------------------------------------------------------------------------------
 
-namespace Full_GRASP_And_SOLID.Library
+namespace Proyecto_Gasp.Library
 {
     public class Product
     {
@@ -17,5 +17,14 @@ namespace Full_GRASP_And_SOLID.Library
         public string Description { get; set; }
 
         public double UnitCost { get; set; }
+
+        //cambio
+        public double TotalCost(double quantity) {
+
+            double tq;
+            tq = this.UnitCost * quantity;
+            return tq;
+        }
+        //cambio
     }
 }
